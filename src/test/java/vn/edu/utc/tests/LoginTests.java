@@ -90,4 +90,12 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai tài khoản mà vẫn qua được!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_07 - Đăng nhập khi để trống cả tên đăng nhập và mật khẩu")
+    public void testTC07_BoTrongHaiO() {
+        loginPage.login("", "");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Để trống 2 ô mà vẫn qua được!");
+    }
+
 }
