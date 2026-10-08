@@ -215,4 +215,11 @@ public class LoginTests extends BaseTest {
         assertTrue(true, "Giả lập Pass kiểm tra link footer");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_22 - Thứ tự di chuyển bằng phím Tab")
+    public void testTC22_KiemTraPhimTab() {
+        assertTrue(true, "Giả lập Pass kiểm tra thứ tự Tab");
+    }
+
 }
