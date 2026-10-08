@@ -106,4 +106,12 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Để trống tài khoản mà vẫn qua được!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_09 - Đăng nhập khi nhập tên đăng nhập, để trống mật khẩu")
+    public void testTC09_BoTrongMatKhau() {
+        loginPage.login("masv_gia", "");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Để trống mật khẩu mà vẫn qua được!");
+    }
+
 }
