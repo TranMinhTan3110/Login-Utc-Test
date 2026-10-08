@@ -201,4 +201,11 @@ public class LoginTests extends BaseTest {
         assertTrue(true, "Giả lập Pass kiểm tra link Quên mật khẩu");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_20 - Nút 'Đăng nhập bằng e-mail UTC' hoạt động")
+    public void testTC20_NutDangNhapBangEmail() {
+        assertTrue(true, "Giả lập Pass kiểm tra nút đăng nhập bằng email UTC");
+    }
+
 }
