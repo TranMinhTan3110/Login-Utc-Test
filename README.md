@@ -16,10 +16,28 @@ Du an ap dung cac cong nghe va mo hinh tieu chuan trong nganh kiem thu phan mem 
 - Mo hinh thiet ke: Page Object Model (POM)
 
 ## 3. Cau truc thu muc
-- src/test/java/vn/edu/utc/base/: Chua lop BaseTest, cau hinh khoi tao va dong trinh duyet Chrome tu dong.
-- src/test/java/vn/edu/utc/pages/: Chua lop LoginPage ap dung mo hinh Page Object Model, dong goi cac phan tu (locators) va cac hanh dong tren trang.
-- src/test/java/vn/edu/utc/tests/: Chua lop LoginTests gom 22 kịch bản kiem thu (Test Cases).
-- src/test/java/vn/edu/utc/utils/: Chua cac lop tien ich (Utilities) ho tro du an.
+Toan bo ma nguon duoc to chuc theo mo hinh Page Object Model (POM) giup de dang quan ly va bao tri:
+
+```text
+Login-Utc-Test/
+├── .github/workflows/          # File cau hinh CI/CD cho Github Actions
+├── build/                      # Thu muc chua ket qua sau khi build va test
+├── gradle/                     # File cau hinh Gradle Wrapper
+├── src/test/java/vn/edu/utc/
+│   ├── base/
+│   │   └── BaseTest.java       # Khoi tao va cau hinh WebDriver (Chrome)
+│   ├── pages/
+│   │   └── LoginPage.java      # Dong goi cac phan tu (Locators) va ham xu ly
+│   ├── tests/
+│   │   ├── LoginTests.java     # Chua 22 kich ban test (Test Cases)
+│   │   └── LoginExcelTest.java # Kiem thu Data-driven voi file Excel
+│   └── utils/
+│       └── ExcelUtils.java     # Tien ich ho tro doc du lieu tu Excel
+├── .gitignore                  # Khai bao cac file khong dua len Git
+├── build.gradle                # Quan ly thu vien (Selenium, JUnit, Allure)
+├── README.md                   # Tai lieu huong dan du an (File ban dang doc)
+└── report.png                  # Anh chup bao cao ket qua kiem thu
+```
 
 ## 4. Danh sach Kich ban Kiem thu (22 Test Cases)
 Du an bao phu toan dien cac tinh huong kiem thu tu co ban den nang cao, bao gom:
@@ -28,6 +46,7 @@ Du an bao phu toan dien cac tinh huong kiem thu tu co ban den nang cao, bao gom:
 - Kiem tra bien (Boundary): Chuoi ky tu rat dai, ky tu khoang trang dau cuoi...
 - Kiem tra bao mat (Security): SQL Injection, XSS, an ky tu mat khau...
 - Kiem tra luu tru phien (Session): Checkbox luu dang nhap...
+
 
 ## 5. Huong dan cai dat va chay chuong trinh
 De chay duoc du an nay tren may ca nhan, can thuc hien cac buoc sau:
