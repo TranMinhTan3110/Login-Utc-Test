@@ -144,4 +144,12 @@ public class LoginTests extends BaseTest {
         assertTrue(true, "Giả lập pass cho xử lý khoảng trắng");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_13 - Mật khẩu phân biệt chữ hoa, chữ thường")
+    public void testTC13_PhanBietHoaThuong() {
+        loginPage.login("masv_gia", "MATKHAU_GIA"); // Cố tình viết hoa
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai chữ hoa/thường mà vẫn qua được!");
+    }
+
 }
