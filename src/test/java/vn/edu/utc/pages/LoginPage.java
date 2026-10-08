@@ -2,45 +2,30 @@ package vn.edu.utc.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+public class LoginPage extends BasePage {
 
-public class LoginPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    // 1. Quản lý các Locators (Địa chỉ của các thẻ trên web) ở một nơi duy nhất
+    // Locators
     private By usernameLocator = By.xpath("//input[@placeholder='Tên đăng nhập' or @type='text']");
     private By passwordLocator = By.xpath("//input[@placeholder='Mật khẩu' or @type='password']");
     private By loginButtonLocator = By.xpath("//button[contains(text(), 'Đăng nhập') or @type='submit'] | //input[@type='submit' and @value='Đăng nhập']");
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        super(driver); // Gọi constructor của BasePage
     }
 
-    // 2. Viết các hàm chức năng tương ứng
     public void enterUsername(String username) {
-        WebElement usernameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameLocator));
-        usernameInput.clear();
-        usernameInput.sendKeys(username);
+        enterText(usernameLocator, username); // Kế thừa hàm enterText từ BasePage
     }
 
     public void enterPassword(String password) {
-        WebElement passwordInput = driver.findElement(passwordLocator);
-        passwordInput.clear();
-        passwordInput.sendKeys(password);
+        enterText(passwordLocator, password); // Kế thừa hàm enterText từ BasePage
     }
 
     public void clickLoginButton() {
-        WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(loginButtonLocator));
-        loginButton.click();
+        clickElement(loginButtonLocator); // Kế thừa hàm clickElement từ BasePage
     }
     
-    // Gộp các bước thành 1 hàm tiện lợi
     public void login(String username, String password) {
         enterUsername(username);
         enterPassword(password);
