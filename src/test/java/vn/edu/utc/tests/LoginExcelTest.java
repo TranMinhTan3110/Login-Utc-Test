@@ -8,10 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import vn.edu.utc.pages.LoginPage;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 
 import java.time.Duration;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@Epic("Authentication")
+@Feature("Login Feature")
 public class LoginExcelTest {
 
     private WebDriver driver;
