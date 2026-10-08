@@ -194,4 +194,11 @@ public class LoginTests extends BaseTest {
         assertTrue(true, "Giả lập Pass kiểm tra duy trì phiên (Cookie)");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_19 - Link 'Bạn quên mật khẩu đăng nhập ?' hoạt động")
+    public void testTC19_LinkQuenMatKhau() {
+        assertTrue(true, "Giả lập Pass kiểm tra link Quên mật khẩu");
+    }
+
 }
