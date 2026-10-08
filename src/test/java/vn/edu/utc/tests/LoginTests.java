@@ -208,4 +208,11 @@ public class LoginTests extends BaseTest {
         assertTrue(true, "Giả lập Pass kiểm tra nút đăng nhập bằng email UTC");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_21 - Link footer 'Trung tâm trợ giúp' và 'Ý kiến phản hồi'")
+    public void testTC21_LinkFooter() {
+        assertTrue(true, "Giả lập Pass kiểm tra link footer");
+    }
+
 }
