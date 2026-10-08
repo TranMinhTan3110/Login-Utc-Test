@@ -82,4 +82,12 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai mật khẩu mà vẫn qua được trang Login!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_06 - Đăng nhập với tên đăng nhập sai, mật khẩu đúng")
+    public void testTC06_SaiTenDungMatKhau() {
+        loginPage.login("user_khong_ton_tai", "matkhau_gia");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai tài khoản mà vẫn qua được!");
+    }
+
 }
