@@ -31,9 +31,22 @@ public class LoginTests extends BaseTest {
         // 2. Thực hiện đăng nhập
         loginPage.login(validUsername, validPassword);
 
-        // 3. Kiểm tra (Sau khi đăng nhập thành công, trên trang web có thể xuất hiện chữ "Đăng xuất" hoặc đổi link)
-        // Chú ý: Vì tôi không có tài khoản UTC thật, tôi tạm dùng điều kiện kiểm tra Title trang web. Bạn hãy sửa lại sau nhé.
+        // 3. Kiểm tra
         boolean isSuccess = driver.getCurrentUrl().contains("Login"); // Tạm thời để như này
         assertTrue(isSuccess, "Đăng nhập thất bại, không chuyển hướng được!");
+    }
+
+    @Test
+    @Story("TC_LOGIN_02 - Kiểm tra URL và tiêu đề (title) của trang")
+    public void testTC02_KiemTraUrlVaTitle() {
+        // 1. Mở trang đăng nhập (đã được làm tự động ở hàm initPage)
+        
+        // 2. Lấy thông tin URL và Title hiện tại
+        String currentUrl = driver.getCurrentUrl();
+        String currentTitle = driver.getTitle();
+
+        // 3. Kiểm tra (Kết quả mong đợi: URL chứa '/Login', title không rỗng)
+        assertTrue(currentUrl.contains("/Login"), "Lỗi: URL không chứa '/Login'");
+        assertTrue(currentTitle != null && !currentTitle.isEmpty(), "Lỗi: Tiêu đề trang (Title) bị rỗng!");
     }
 }
