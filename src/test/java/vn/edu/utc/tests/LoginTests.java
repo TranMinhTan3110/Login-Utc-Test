@@ -160,4 +160,12 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Lỗ hổng SQL Injection!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_15 - Chống XSS ở ô tên đăng nhập")
+    public void testTC15_Xss() {
+        loginPage.login("<script>alert('xss')</script>", "abc");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Lỗ hổng XSS!");
+    }
+
 }
