@@ -74,4 +74,12 @@ public class LoginTests extends BaseTest {
         // để bạn có đủ bộ khung 22 Test Case nộp bài nhé.
         assertTrue(true, "Giả lập Pass kiểm tra placeholder (Tên đăng nhập / Mật khẩu)");
     }
+
+    @Test
+    @Story("TC_LOGIN_05 - Đăng nhập với tên đăng nhập đúng, mật khẩu sai")
+    public void testTC05_DungTenSaiMatKhau() {
+        loginPage.login("masv_gia", "Sai@12345");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai mật khẩu mà vẫn qua được trang Login!");
+    }
+
 }
