@@ -152,4 +152,12 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Nhập sai chữ hoa/thường mà vẫn qua được!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_14 - Chống SQL Injection ở ô tên đăng nhập")
+    public void testTC14_SqlInjection() {
+        loginPage.login("' OR '1'='1' --", "abc");
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Lỗ hổng SQL Injection!");
+    }
+
 }
