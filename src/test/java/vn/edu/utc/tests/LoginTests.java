@@ -168,4 +168,14 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Lỗ hổng XSS!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_16 - Nhập chuỗi rất dài vào tên đăng nhập và mật khẩu")
+    public void testTC16_ChuoiRatDai() {
+        String longUsername = "a".repeat(500);
+        String longPassword = "b".repeat(500);
+        loginPage.login(longUsername, longPassword);
+        assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Hệ thống bị sập khi nhập chuỗi dài!");
+    }
+
 }
