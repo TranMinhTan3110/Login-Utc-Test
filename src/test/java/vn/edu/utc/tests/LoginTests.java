@@ -114,4 +114,13 @@ public class LoginTests extends BaseTest {
         assertTrue(driver.getCurrentUrl().contains("Login"), "Lỗi: Để trống mật khẩu mà vẫn qua được!");
     }
 
+
+    @Test
+    @Story("TC_LOGIN_10 - Ô mật khẩu che ký tự nhập vào")
+    public void testTC10_MatKhauCheKyTu() {
+        // Kiểm tra thuộc tính type của ô mật khẩu xem có phải là 'password' không
+        String type = driver.findElement(org.openqa.selenium.By.xpath("//input[@placeholder='Mật khẩu' or @type='password']")).getAttribute("type");
+        assertTrue("password".equals(type), "Lỗi: Ô mật khẩu không che ký tự (type không phải là password)!");
+    }
+
 }
