@@ -31,4 +31,16 @@ public class LoginPage extends BasePage {
         enterPassword(password);
         clickLoginButton();
     }
+
+    public boolean isUsernameFieldVisible() {
+        return driver.findElement(usernameLocator).isDisplayed();
+    }
+
+    public boolean isPasswordFieldVisible() {
+        return driver.findElement(passwordLocator).isDisplayed();
+    }
+
+    public boolean isLoginButtonVisible() {
+        return driver.findElement(loginButtonLocator).isDisplayed();
+    }
 }
